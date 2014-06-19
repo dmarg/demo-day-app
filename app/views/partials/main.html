@@ -1,7 +1,11 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class='col-lg-12' ng-hide="currentUser">
+  <a ng-href="/auth/linkedin" target='_self'><img src="../../images/buttonLinkedInRet.png" alt="sign in with Linkedin"></a>
+</div>
 
+<div class='col-lg-12' ng-show="currentUser">
+  <h1>USER LOGGED IN!</h1>
 </div>
 
 
