@@ -39,8 +39,13 @@
 
 
 <div class='col-lg-12' ng-show="currentUser">
-  <h1>USER LOGGED IN!</h1>
-</div>
+  <h2> DreamIt Ventures Demo Day </h2>
+    <div class="row marketing">
+      <div ng-repeat="thing in awesomeThings">
+          <h4><a ng-href="/companypage/{{thing.name}}">{{thing.name}}</a></h4>
+      </div>
+    </div>
+</div></div>
 
 
 
