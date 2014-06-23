@@ -7,4 +7,10 @@ angular.module('demoDayAppApp')
     // });
 
     $scope.companyName = $routeParams.companyname;
+
+    $http.get('/api/findCurrent/?name=' + $routeParams.companyname)
+        .success(function(company){
+            $scope.companyfull = company;
+          });
+
   });
