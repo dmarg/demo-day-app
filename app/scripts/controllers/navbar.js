@@ -11,6 +11,8 @@ angular.module('demoDayAppApp')
       });
     };
 
+    $scope.currentUserFull = null;
+
     $scope.isActive = function(route) {
       return route === $location.path();
     };
