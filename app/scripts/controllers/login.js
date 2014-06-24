@@ -8,16 +8,17 @@ angular.module('demoDayAppApp')
     // $scope.emailPattern = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/gi;
     // $scope.loginView = true;
 
+    $scope.oneAtATime = true;
     $scope.status = {
       isFirstOpen: true,
       oneAtATime: true
     };
 
     $scope.toggleLoginSignUp = function() {
-      $scope.user.name = '';
-      $scope.user.email = '';
-      $scope.user.password = '';
-      $scope.user.passwordVerify = '';
+      // $scope.user.name = '';
+      // $scope.user.email = '';
+      // $scope.user.password = '';
+      // $scope.user.passwordVerify = '';
     };
 
     $scope.linkedin = function() {
@@ -28,7 +29,7 @@ angular.module('demoDayAppApp')
 
     $scope.login = function(loginForm) {
       $scope.submitted = true;
-
+      console.log($scope.user);
       if(loginForm.$valid) {
         Auth.login({
           email: $scope.user.email,
@@ -49,7 +50,7 @@ angular.module('demoDayAppApp')
     $scope.register = function(form) {
       $scope.submitted = true;
 
-      if(form.$valid && $scope.user.password === $scope.user.passwordVerify) {
+      if(form.$valid) {
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
