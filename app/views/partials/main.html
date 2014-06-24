@@ -2,24 +2,23 @@
 
 <div ng-hide="currentUser" class="center">
 
-  <div ng-controller="LoginCtrl">
+    <accordion close-others="oneAtATime">
 
-    <accordion close-others="status.oneAtATime">
+      <div ng-controller="LoginCtrl">
 
       <accordion-group heading="Login with LinkedIn" is-open="status.isFirstOpen" ng-click="toggleLoginSignUp()">
-        <div class='col-lg-12'>
+        <div class='col-lg-12' ng-controller="LoginCtrl">
            <!-- <h4>Login with</h4> -->
            <a ng-href="/auth/linkedin" target='_self'><i class="fa fa-linkedin-square"></i><!-- <img src="../../images/buttonLinkedInRet.png" alt="sign in with Linkedin"> --></a>
         </div>
       </accordion-group>
 
 
-      <accordion-group heading="Sign in with e-mail" ng-click="toggleLoginSignUp()">
+      <accordion-group heading="Sign in with e-mail" ng-click="toggleLoginSignUp()" data-toggle>
         <div class="login">
           <div class="col-sm-12">
             <br>
             <!-- <h4>or sign in with e-mail</h4> -->
-            <!-- <p>Accounts are reset on server restart from <code>dummydata.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p> -->
           </div>
           <div class="col-sm-12">
 
@@ -44,7 +43,7 @@
                 <p class="help-block">{{ errors.other }}</p>
               </div>
 
-              <button type="submit" class="btn btn-lg btn-primary"> Sign in </button>
+              <button type="submit" class="btn btn-lg btn-primary" ng-click="$event.stopPropagation()"> Sign in </button>
             </form>
           </div>
           <!-- <div class="row">
@@ -117,19 +116,20 @@
               <div class="form-group" ng-class="{ 'has-success': form.$valid && submitted,
                                                   'has-error': form.$invalid && submitted }">
                 <label> Confirm Password</label>
-                <input type="password" name="passwordVerify" class="form-control" id="passwordVerify" ng-model="user.passwordVerify" password-verify required/>
+                <input type="password" name="passwordVerify" class="form-control" id="passwordVerify" ng-model="user.passwordVerify" password-verify="password" />
                 <!-- <p class="help-block"
                    ng-show="form.passwordVerify.$error.required && form.password.$dirty && submitted">
                   Please confirm your password.
                 </p> -->
                 <p class="help-block"
-                   ng-show="((form.passwordVerify.$error.noMatch && form.password.$dirty && form.passwordVerify.$error.required) && submitted) || ((user.password !== user.passwordVerify) && submitted)">
+                   ng-show="(form.passwordVerify.$error.noMatch && form.passwordVerify.$dirty) && submitted">
                   Confirm password must match password.
                 </p>
               </div>
-              <button class="btn btn-lg btn-primary" type="submit">Sign up</button>
+              <button class="btn btn-lg btn-primary" type="submit" ng-click="$event.stopPropagation()">Sign up</button>
             </form>
           </div>
+        </div>
 
           <!-- <div class="row">
             <div class="col-sm-12">
@@ -138,7 +138,7 @@
             </div>
           </div> -->
         </accordion-group>
-
+        </div>
       </accordion>
 
     </div>
