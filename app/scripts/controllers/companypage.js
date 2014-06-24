@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('demoDayAppApp')
-  .controller('CompanypageCtrl', function ($scope, $http, $routeParams) {
+  .controller('CompanypageCtrl', function ($scope, $http, $routeParams, $rootScope) {
     // $http.get('/api/awesomeThings').success(function(awesomeThings) {
     //   $scope.awesomeThings = awesomeThings;
     // });
@@ -12,5 +12,10 @@ angular.module('demoDayAppApp')
         .success(function(company){
             $scope.companyfull = company;
           });
+
+    // $http.get('/api/findCurrentUser/?name=' + $rootScope.currentUser.name)
+    //     .success(function(user){
+    //         $scope.currentUserFull = user;
+    //       });
 
   });

@@ -1,11 +1,22 @@
+<div ng-include="'partials/navbar'"></div>
+
+<a href='/'><i class="fa fa-reply fa-lg"></i> Back to Companies</a>
+
+<p><img src="{{companyfull.image}}" alt=""></p>
 <h1> {{companyfull.name}} </h1>
 <p> {{companyfull.info}} </p>
 
-<h1> Company Info </h1>
-<p>Co-founders {{companyfull.cofounders}}</p>
-<p> Founded {{companyfull.founded}} </p>
-<p> Industry {{companyfull.industry}} </p>
-<p> Email {{companyfull.email}} </p>
-<p>Website {{companyfull.website}} </p>
+<h3> Company Info </h3>
+<p> <div class = "bold"> Co-founders:</div> {{companyfull.cofounders}}</p>
+<p> <div class = "bold"> Founded: </div> {{companyfull.founded}} </p>
+<p> <div class = "bold"> Industry: </div> {{companyfull.industry}} </p>
+<p> <div class = "bold"> Email: </div> {{companyfull.email}} </p>
+<p> <div class = "bold"> Website: </div> <a href="{{companyfull.website}}">{{companyfull.website}}</a> </p>
 
-<h1> Engage </h1>
+
+<h3> Engage </h3>
+<p>
+  <i class="fa fa-calendar fa-4x"></i> Appointment
+  <i class="fa fa-share-alt-square fa-4x"></i> Share
+  <i class="fa fa-envelope-square fa-4x"></i> Email
+</p>

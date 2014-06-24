@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('demoDayAppApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, $rootScope) {
     $http.get('/api/Company').success(function(Company) {
       $scope.companies = Company;
     });
@@ -11,5 +11,6 @@ angular.module('demoDayAppApp')
       console.log(data);
     });
   };
+
 
   });
