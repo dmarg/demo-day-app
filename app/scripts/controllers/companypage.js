@@ -13,6 +13,8 @@ angular.module('demoDayAppApp')
             $scope.companyfull = company;
           });
 
+    $scope.isCollapsed = false;
+
     // $http.get('/api/findCurrentUser/?name=' + $rootScope.currentUser.name)
     //     .success(function(user){
     //         $scope.currentUserFull = user;
