@@ -6,6 +6,7 @@ angular.module('demoDayAppApp')
       $scope.companies = Company;
     });
 
+  $scope.oneAtATime = true;
 
   $scope.linkedin = function() {
     $http.get('/auth/linkedin').success(function(data) {

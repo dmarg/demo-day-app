@@ -1,13 +1,17 @@
 'use strict';
 
 angular.module('demoDayAppApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location) {
+  .controller('LoginCtrl', function ($scope, Auth, $location, $http) {
     $scope.user = {};
     $scope.errors = {};
 
     // $scope.emailPattern = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/gi;
-
     $scope.loginView = true;
+
+    $scope.status = {
+      isFirstOpen: true,
+      oneAtATime: true
+    };
 
     $scope.toggleLoginSignUp = function() {
       if ($scope.loginView === true) {
@@ -24,7 +28,11 @@ angular.module('demoDayAppApp')
       }
     };
 
-
+    $scope.linkedin = function() {
+      $http.get('/auth/linkedin').success(function(data) {
+        console.log(data);
+      });
+    };
 
     $scope.login = function(loginForm) {
       $scope.submitted = true;
