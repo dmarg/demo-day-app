@@ -1,12 +1,12 @@
-<div ng-include="'partials/navbar.html'"></div>
+<!-- <div ng-include="'partials/navbar.html'"></div> -->
 
-<div class="row">
+<div class="row center">
   <div class="col-sm-12">
     <h1>Sign up</h1>
   </div>
   <div class="col-sm-12">
     <form class="form" name="form" ng-submit="register(form)" novalidate>
-
+<!--
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                           'has-error': form.name.$invalid && submitted }">
         <label>Name</label>
@@ -16,8 +16,8 @@
         <p class="help-block" ng-show="form.name.$error.required && submitted">
           A name is required
         </p>
-      </div>   
-
+      </div>
+ -->
       <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                           'has-error': form.email.$invalid && submitted }">
         <label>Email</label>
@@ -39,7 +39,7 @@
       <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                           'has-error': form.password.$invalid && submitted }">
         <label>Password</label>
-        
+
         <input type="password" name="password" class="form-control" ng-model="user.password"
                ng-minlength="3"
                required
@@ -52,7 +52,10 @@
           {{ errors.password }}
         </p>
       </div>
-
+      <div class="form-group">
+        <label> Confirm Password</label>
+        <input type="text">
+      </div>
       <button class="btn btn-lg btn-primary" type="submit">Sign up</button>
     </form>
   </div>
@@ -61,6 +64,6 @@
 <div class="row">
   <div class="col-sm-12">
     <hr>
-    Have an account? <a href="/login" class="text-center new-account">Log in.</a>
+    Have an account? <a href="/" class="text-center new-account">Log in.</a>
   </div>
 </div>

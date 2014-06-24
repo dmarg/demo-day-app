@@ -6,6 +6,8 @@ angular.module('demoDayAppApp')
       $scope.awesomeThings = awesomeThings;
     });
 
+
+
   $scope.linkedin = function() {
     $http.get('/auth/linkedin').success(function(data) {
       console.log(data);
