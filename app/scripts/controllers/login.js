@@ -6,7 +6,7 @@ angular.module('demoDayAppApp')
     $scope.errors = {};
 
     // $scope.emailPattern = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/gi;
-    $scope.loginView = true;
+    // $scope.loginView = true;
 
     $scope.status = {
       isFirstOpen: true,
@@ -14,18 +14,10 @@ angular.module('demoDayAppApp')
     };
 
     $scope.toggleLoginSignUp = function() {
-      if ($scope.loginView === true) {
-        $scope.loginView = false;
-        $scope.user.name = '';
-        $scope.user.email = '';
-        $scope.user.password = '';
-        $scope.user.passwordVerify = '';
-
-      } else {
-        $scope.loginView = true;
-        $scope.user.email = '';
-        $scope.user.password = '';
-      }
+      $scope.user.name = '';
+      $scope.user.email = '';
+      $scope.user.password = '';
+      $scope.user.passwordVerify = '';
     };
 
     $scope.linkedin = function() {

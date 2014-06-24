@@ -6,7 +6,7 @@
 
     <accordion close-others="status.oneAtATime">
 
-      <accordion-group heading="Login with LinkedIn" is-open="status.isFirstOpen">
+      <accordion-group heading="Login with LinkedIn" is-open="status.isFirstOpen" ng-click="toggleLoginSignUp()">
         <div class='col-lg-12'>
            <!-- <h4>Login with</h4> -->
            <a ng-href="/auth/linkedin" target='_self'><i class="fa fa-linkedin-square"></i><!-- <img src="../../images/buttonLinkedInRet.png" alt="sign in with Linkedin"> --></a>
@@ -14,7 +14,7 @@
       </accordion-group>
 
 
-      <accordion-group heading="Sign in with e-mail">
+      <accordion-group heading="Sign in with e-mail" ng-click="toggleLoginSignUp()">
         <div class="login">
           <div class="col-sm-12">
             <br>
@@ -57,7 +57,7 @@
       </accordion-group>
 
 
-      <accordion-group heading="Sign up with e-mail">
+      <accordion-group heading="Sign up with e-mail" ng-click="toggleLoginSignUp()">
 
         <div class="signup">
           <div class="col-sm-12">
