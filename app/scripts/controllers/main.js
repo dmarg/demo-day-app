@@ -7,7 +7,6 @@ angular.module('demoDayAppApp')
     });
 
 
-
   $scope.linkedin = function() {
     $http.get('/auth/linkedin').success(function(data) {
       console.log(data);
