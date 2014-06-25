@@ -6,13 +6,13 @@ angular.module('demoDayAppApp')
       $scope.companies = Company;
     });
 
-  $scope.oneAtATime = true;
+  // $scope.oneAtATime = true;
 
-  $scope.linkedin = function() {
-    $http.get('/auth/linkedin').success(function(data) {
-      console.log(data);
-    });
-  };
+  // $scope.linkedin = function() {
+  //   $http.get('/auth/linkedin').success(function(data) {
+  //     console.log(data);
+  //   });
+  // };
 
 
   });
