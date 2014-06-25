@@ -1,5 +1,49 @@
 <!-- <div ng-include="'partials/navbar.html'"></div> -->
 
+<div class="login">
+  <div class="col-sm-12">
+    <br>
+    <!-- <h4>or sign in with e-mail</h4> -->
+  </div>
+  <div class="col-sm-12">
+
+    <form class="form" name="loginForm" ng-submit="login(loginForm)" novalidate>
+
+      <div class="form-group">
+        <label>Email</label>
+
+        <input type="text" name="email" class="form-control" ng-model="user.email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+
+        <input type="password" name="password" class="form-control" ng-model="user.password" required>
+      </div>
+
+      <div class="form-group has-error">
+        <p class="help-block" ng-show="loginForm.email.$error.required && loginForm.password.$error.required && submitted">
+           Please enter your email and password.
+        </p>
+        <p class="help-block">{{ errors.other }}</p>
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-primary" ng-click="$event.stopPropagation()"> Sign in </button>
+    </form>
+  </div>
+  <!-- <div class="row">
+    <div class="col-sm-12">
+      <hr>
+      Not registered? <a href="/" class="text-center new-account" ng-click="toggleLoginSignUp()">Create an account.</a>
+    </div>
+  </div> -->
+</div>
+
+
+
+
+
+<!--
 <div class="row">
   <div class="col-sm-12">
     <h1>Login</h1>
@@ -38,3 +82,4 @@
     Not registered? <a href="/signup" class="text-center new-account">Create an account.</a>
   </div>
 </div>
+ -->
