@@ -89,6 +89,21 @@ i {
 }
 
 
+/* Accordion Main Page Styling */
+.panel-heading {
+    padding: 10px 0px;
+}
+
+.accordionHeading {
+    padding: 0 25%;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+}
+
+
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

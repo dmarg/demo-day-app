@@ -15,10 +15,10 @@ angular.module('demoDayAppApp')
     };
 
     $scope.toggleLoginSignUp = function() {
-      // $scope.user.name = '';
-      // $scope.user.email = '';
-      // $scope.user.password = '';
-      // $scope.user.passwordVerify = '';
+      $scope.user.name = '';
+      $scope.user.email = '';
+      $scope.user.password = '';
+      $scope.user.passwordVerify = '';
     };
 
     $scope.linkedin = function() {
