@@ -9,8 +9,8 @@ angular.module('demoDayAppApp').directive('addthisToolbox', ['$timeout', functio
         addthis.init();
         addthis.toolbox($(element).get(), {}, {
           url: attrs.url,
-          title : "Mike Young is the Man",
-          description : 'He is SO SICK'
+          title : "Daniel Margol for president",
+          description : 'Hes so dreamy!'
         });
       });
     }
