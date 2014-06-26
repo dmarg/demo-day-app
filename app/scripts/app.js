@@ -5,7 +5,8 @@ angular.module('demoDayAppApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'nsPopover'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
