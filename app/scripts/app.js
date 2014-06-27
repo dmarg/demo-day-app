@@ -5,7 +5,8 @@ angular.module('demoDayAppApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'nsPopover'
 ])
   .config(function($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -28,6 +29,10 @@ angular.module('demoDayAppApp', [
       })
       .when('/companypage/:companyname', {
         templateUrl: 'partials/companypage',
+        controller: 'CompanypageCtrl'
+      })
+      .when('/admininput', {
+        templateUrl: 'partials/CompanyInputForm',
         controller: 'CompanypageCtrl'
       })
       .otherwise({

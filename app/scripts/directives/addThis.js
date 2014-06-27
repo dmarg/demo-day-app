@@ -9,8 +9,8 @@ angular.module('demoDayAppApp').directive('addthisToolbox', ['$timeout', functio
         addthis.init();
         addthis.toolbox($(element).get(), {}, {
           url: attrs.url,
-          title : "Daniel Margol for president",
-          description : 'Hes so dreamy!'
+          title : 'This company is amazing!',
+          description : 'Check out their webpage'
         });
       });
     }
