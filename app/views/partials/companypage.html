@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 //<![CDATA[
   (function() {
     var shr = document.createElement('script');
@@ -15,7 +15,7 @@
     s.parentNode.insertBefore(shr, s);
   })();
 //]]>
-</script>
+</script> -->
 
 
 <div ng-include="'partials/navbar'"></div>
@@ -54,25 +54,17 @@
         </div>
     </script>
 
-    <!-- <button class="btn btn-default" ng-click="open()">Share</button> -->
-
-
 <p>
-  <i class="fa fa-calendar fa-4x"></i>
-  <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x"></i></a>
-  <!-- <i class="fa fa-share-alt-square fa-4x" ng-click="isCollapsed = !isCollapsed"></i> -->
-          <!-- <div collapse="!isCollapsed"> -->
-              <!-- <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='6979147'></div> -->
-       <i class="fa fa-share-alt-square fa-4x" ng-click="open()"></i>
-              <!-- <div addthis-toolbox data-url='{{companyfull.website}}'
-                   class="addthis_toolbox addthis_default_style addthis_32x32_style">
-                <a class="addthis_button_linkedin"><i class="fa fa-linkedin-square"></i></a>
-                <a class="addthis_button_facebook"><i class="fa fa-facebook-square"></i></a>
-                <a class="addthis_button_twitter"><i class="fa fa-twitter-square"></i></a>
-                <a class="addthis_button_google_plusone_share"><i class="fa fa-google-plus-square"></i></a>
-              </div> -->
 
-<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53a9dad720b656c3"></script>
- -->
+  <a href="{{companyfull.meetmelink}}" target="_blank"><i class="fa fa-calendar fa-4x"></i></a>
+  <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x"></i></a>
+       <i class="fa fa-share-alt-square fa-4x" ng-click="open()"></i>
+<!-- div align="center" style="height:100%;">
+    <iframe src="https://secure.scheduleonce.com/MikeYoung&thm=darkgray&dt=&em=1" id="SOI_MikeYoung" name="ScheduleOnceIframe" scrolling="auto" frameborder="0" hspace="0" marginheight="0" marginwidth="0" height="620px" width="735px" vspace="0" style="border-radius: 7px;-webkit-border-radius:7px;"></iframe>
+</div>
+<script type="text/javascript" src="https://secure.scheduleonce.com/mergedjs/ScheduleOnceEmbed.js"></script>
+<script type="text/javascript">
+soe.AddEventListners();
+</script> -->
 
 </p>
