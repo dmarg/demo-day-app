@@ -7,16 +7,16 @@
 
       <accordion-group is-open="status.isFirstOpen" ng-click="toggleLoginSignUp()">
         <accordion-heading>
-          <a ng-click="toggleLoginSignUp()" class="accordionHeading" >Login with Linkedin</a>
+          <a ng-click="toggleLoginSignUp()" class="accordionHeading">Login with Linkedin</a>
         </accordion-heading>
         <div class='col-lg-12'>
-           <a ng-href="/auth/linkedin" target='_self'><i class="fa fa-linkedin-square"></i></a>
+          <a ng-href="/auth/linkedin" target='_self'><i class="fa fa-linkedin-square"></i></a>
         </div>
       </accordion-group>
 
       <accordion-group>
         <accordion-heading>
-          <a ng-click="toggleLoginSignUp()" class="accordionHeading" >Login with e-mail</a>
+          <a ng-click="toggleLoginSignUp()" class="accordionHeading">Login with e-mail</a>
         </accordion-heading>
         <div ng-include="'partials/login.html'" scope="" onload=""></div>
       </accordion-group>
@@ -24,7 +24,7 @@
 
       <accordion-group>
         <accordion-heading>
-          <a ng-click="toggleLoginSignUp()" class="accordionHeading" >Sign up with e-mail</a>
+          <a ng-click="toggleLoginSignUp()" class="accordionHeading">Sign up with e-mail</a>
         </accordion-heading>
         <div ng-include="'partials/signup.html'" scope="" onload=""></div>
       </accordion-group>
@@ -36,14 +36,15 @@
 
 
 <div class='col-lg-12' ng-show="currentUser">
-  <h2> DreamIt Ventures Demo Day </h2>
-    <div class="row marketing">
-      <div ng-repeat="company in companies">
-          <h4><a ng-href="/companypage/{{company.name}}">{{company.name}}</a></h4>
-          <p>{{company.industry}}</p>
-          <img src="{{company.image}}" alt="">
-      </div>
+  <h2>DreamIt Ventures Demo Day</h2>
+  <div class="row marketing">
+    <div ng-repeat="company in companies">
+      <h4><a ng-href="/companypage/{{company.name}}">{{company.name}}</a>
+      </h4>
+      <p>{{company.industry}}</p>
+      <img src="{{company.image}}" alt="">
     </div>
+  </div>
 </div>
 
 
@@ -69,5 +70,3 @@
       <p>{{thing.info}}</p>
   </div>
 </div> -->
-
-
