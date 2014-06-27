@@ -27,10 +27,14 @@
 <p> {{companyfull.info}} </p>
 
 <h3> Company Info </h3>
-<p> <div class = "bold"> Co-founders:</div> {{companyfull.cofounders}}</p>
+<p> <div class = "bold"> Co-founders:</div>
+  <div ng-repeat='founder in companyfull.cofounders'>
+    <a href="{{founder.linkedinurl}}" target= "_blank">{{founder.name}}</a>
+  </div>
+</p>
 <p> <div class = "bold"> Founded: </div> {{companyfull.founded}} </p>
 <p> <div class = "bold"> Industry: </div> {{companyfull.industry}} </p>
-<p> <div class = "bold"> Email: </div> {{companyfull.email}} </p>
+<p> <div class = "bold"> Email: </div> <a href="mailto:{{companyfull.email}}">{{companyfull.email}} </a> </p>
 <p> <div class = "bold"> Website: </div> <a href="{{companyfull.website}}">{{companyfull.website}}</a> </p>
 
 
@@ -59,12 +63,5 @@
   <a href="{{companyfull.meetmelink}}" target="_blank"><i class="fa fa-calendar fa-4x"></i></a>
   <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x"></i></a>
        <i class="fa fa-share-alt-square fa-4x" ng-click="open()"></i>
-<!-- div align="center" style="height:100%;">
-    <iframe src="https://secure.scheduleonce.com/MikeYoung&thm=darkgray&dt=&em=1" id="SOI_MikeYoung" name="ScheduleOnceIframe" scrolling="auto" frameborder="0" hspace="0" marginheight="0" marginwidth="0" height="620px" width="735px" vspace="0" style="border-radius: 7px;-webkit-border-radius:7px;"></iframe>
-</div>
-<script type="text/javascript" src="https://secure.scheduleonce.com/mergedjs/ScheduleOnceEmbed.js"></script>
-<script type="text/javascript">
-soe.AddEventListners();
-</script> -->
 
 </p>

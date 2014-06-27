@@ -31,6 +31,10 @@ angular.module('demoDayAppApp', [
         templateUrl: 'partials/companypage',
         controller: 'CompanypageCtrl'
       })
+      .when('/admininput', {
+        templateUrl: 'partials/CompanyInputForm',
+        controller: 'CompanypageCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
