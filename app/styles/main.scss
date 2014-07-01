@@ -69,7 +69,7 @@ i {
 
 /* Supporting marketing content */
 .marketing {
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 .marketing p + h4 {
@@ -102,15 +102,73 @@ a, a:hover, a:focus {
   text-decoration: none;
 }
 
+#companyBoxes {
+  background-color: rgba(160,160,160,0.5);
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: 2px solid;
+  border-color: rgba(128 ,128 ,128 ,0.5);
+  position: relative;
+}
 
+#engageButtonBox {
+  margin: 15px 0;
+}
 
+#engageButton {
+  margin: 0 5px;
+}
+
+#companyImages {
+  display: inline-block;
+  float:right;
+}
+
+#link {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.link-spanner{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+
+#navbarTitle {
+  padding-bottom: 10px;
+}
+#noMargin {
+  margin: 0 0;
+}
+
+#disappearedInfo {
+  display: none;
+}
 
 /* Responsive: Portrait tablets and up */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .container {
-        max-width: 730px;
+        max-width: 100%;
     }
 
+    #companyImages {
+        display: inline-block;
+        float:right;
+        max-width: 20%;
+}
+    #disappearingInfo {
+        display: none;
+}
+
+    #disappearedInfo {
+        display: inline;
+}
     /* Remove the padding we set earlier */
     .header,
     .marketing,
@@ -127,8 +185,5 @@ a, a:hover, a:focus {
         font-size: 4em;
       }
     }
-        /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+
 }

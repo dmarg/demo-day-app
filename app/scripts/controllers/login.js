@@ -2,7 +2,10 @@
 
 angular.module('demoDayAppApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $http) {
-    $scope.user = {};
+    $scope.user = {
+      email: 'test@test.com',
+      password: 'test'
+    };
     $scope.errors = {};
 
     // $scope.emailPattern = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/gi;
@@ -16,8 +19,8 @@ angular.module('demoDayAppApp')
 
     $scope.toggleLoginSignUp = function() {
       $scope.user.name = '';
-      $scope.user.email = '';
-      $scope.user.password = '';
+      $scope.user.email = 'test@test.com';
+      $scope.user.password = 'test';
       $scope.user.passwordVerify = '';
     };
 

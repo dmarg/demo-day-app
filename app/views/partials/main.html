@@ -37,12 +37,30 @@
 
 <div class='col-lg-12' ng-show="currentUser">
   <h2> DreamIt Ventures Demo Day </h2>
-    <div class="row marketing">
-      <div ng-repeat="company in companies">
-          <h4><a ng-href="/companypage/{{company.name}}">{{company.name}}</a></h4>
-          <p>{{company.industry}}</p>
-          <img src="{{company.image}}" alt="">
-      </div>
+    <div class="row marketing navbarTitle">
+        <div ng-repeat="company in companies" id="companyBoxes">
+            <a id="link" href="/companypage/{{company.name}}">
+              <!-- <span class="link-spanner"></span>
+              <img src="{{company.image}}" alt="" id="companyImages">
+              <h4><a ng-href="/companypage/{{company.name}}">{{company.name}}</a></h4>
+              <p>{{company.industry}}</p>
+              <div class="clearfix"></div> -->
+              <div class='row'>
+                <!-- <div class="col-xs-6 col-xs-offset-3"><h2 id="disappearedInfo">{{company.name}}</h2> </div> -->
+              <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
+                <img class="img-responsive" src="{{company.image}}">
+              </div>
+              <div class="col-lg-10 col-md-10 col-sm-6 col-xs-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
+                <h2 id="disappearingInfo">{{company.name}}</h2>
+                <div ng-repeat='cofounder in company.cofounders'>
+                <h4 style="margin: 5px 0 0px 0;">{{cofounder.name}}</h4>
+                </div>
+                <p style="margin-bottom: 40px;" id="disappearingInfo">{{company.info}}</p>
+              </div>
+              </div>
+              </a>
+
+        </div>
     </div>
 </div>
 

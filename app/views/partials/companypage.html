@@ -1,31 +1,9 @@
-<!-- <script type="text/javascript">
-//<![CDATA[
-  (function() {
-    var shr = document.createElement('script');
-    shr.setAttribute('data-cfasync', 'false');
-    shr.src = '//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js';
-    shr.type = 'text/javascript'; shr.async = 'true';
-    shr.onload = shr.onreadystatechange = function() {
-      var rs = this.readyState;
-      if (rs && rs != 'complete' && rs != 'loaded') return;
-      var site_id = 'dfb36058b112200e5bb20904d7b3402a';
-      try { Shareaholic.init(site_id); } catch (e) {}
-    };
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(shr, s);
-  })();
-//]]>
-</script> -->
-
-
 <div ng-include="'partials/navbar'"></div>
 
-<a href='/'><i class="fa fa-reply fa-lg"></i> Back to Companies</a>
-
-<p><img src="{{companyfull.image}}" alt=""></p>
+<div class = "col-lg-9 col-md-9 col-sm-9 col-xs-12">
+  <a href='/'><i class="fa fa-reply fa-lg"></i> Back to Companies</a>
 <h1> {{companyfull.name}} </h1>
 <p> {{companyfull.info}} </p>
-
 <h3> Company Info </h3>
 <p> <div class = "bold"> Co-founders:</div>
   <div ng-repeat='founder in companyfull.cofounders'>
@@ -36,6 +14,11 @@
 <p> <div class = "bold"> Industry: </div> {{companyfull.industry}} </p>
 <p> <div class = "bold"> Email: </div> <a href="mailto:{{companyfull.email}}">{{companyfull.email}} </a> </p>
 <p> <div class = "bold"> Website: </div> <a href="{{companyfull.website}}">{{companyfull.website}}</a> </p>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xs-offset">
+  <br>
+  <img class="img-responsive" src="{{companyfull.image}}" alt="">
+</div>
 
 
 <h3> Engage </h3>
@@ -45,23 +28,26 @@
             <h3 class="modal-title">Share</h3>
         </div>
         <div class="modal-body">
-            <div addthis-toolbox data-url="{{companyfull.website}}"
+            <div addthis-toolbox data-url='{{companyfull.website}}'
                    class="addthis_toolbox addthis_default_style addthis_32x32_style">
                 <a class="addthis_button_linkedin"><i class="fa fa-linkedin-square"></i></a>
                 <a class="addthis_button_facebook"><i class="fa fa-facebook-square"></i></a>
                 <a class="addthis_button_twitter"><i class="fa fa-twitter-square"></i></a>
                 <a class="addthis_button_google_plusone_share"><i class="fa fa-google-plus-square"></i></a>
             </div>
+
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" ng-click="ok()">Close</button>
         </div>
     </script>
 
-<p>
+<p id="engageButtonBox">
 
-  <a href="{{companyfull.meetmelink}}" target="_blank"><i class="fa fa-calendar fa-4x"></i></a>
-  <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x"></i></a>
-       <i class="fa fa-share-alt-square fa-4x" ng-click="open()"></i>
+  <a href="{{companyfull.meetmelink}}" target="_blank" ><i class="fa fa-calendar fa-4x" id="engageButton"></i></a>
+  <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x" id="engageButton"></i></a>
+  <a href=""><i class="fa fa-share-alt-square fa-4x" ng-click="open()" id="engageButton"></i></a>
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- <div class="addthis_sharing_toolbox"></div> -->
 </p>

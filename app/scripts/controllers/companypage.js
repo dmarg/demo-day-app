@@ -23,6 +23,7 @@ angular.module('demoDayAppApp')
       var modalInstance = $modal.open({
         templateUrl: 'myModalContent.html',
         controller: ModalInstanceCtrl,
+        scope: $scope,
         size: size,
         resolve: {
           items: function () {
@@ -52,9 +53,6 @@ angular.module('demoDayAppApp')
         $modalInstance.close($scope.selected.item);
       };
 
-      $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-      };
     };
 
 
