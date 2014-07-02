@@ -22,7 +22,7 @@ angular.module('demoDayAppApp')
 
       var modalInstance = $modal.open({
         templateUrl: 'myModalContent.html',
-        controller: ModalInstanceCtrl,
+        controller: 'ModalInstanceCtrl',
         scope: $scope,
         size: size,
         resolve: {
@@ -39,10 +39,32 @@ angular.module('demoDayAppApp')
       });
     };
 
+    $scope.openConfirm = function (size) {
+
+      var modalInstance = $modal.open({
+        templateUrl: 'confirmModal.html',
+        controller: 'ModalInstanceCtrl',
+        scope: $scope,
+        size: size,
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.selected = selectedItem;
+      }, function () {
+        $log.info('Modal dismissed at: ' + new Date());
+      });
+    };
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
-    var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+
+
+  }).controller("ModalInstanceCtrl", function ($scope, $modalInstance, items) {
 
       $scope.items = items;
       $scope.selected = {
@@ -53,7 +75,4 @@ angular.module('demoDayAppApp')
         $modalInstance.close($scope.selected.item);
       };
 
-    };
-
-
-  });
+    });

@@ -42,9 +42,26 @@
         </div>
     </script>
 
+    <script type="text/ng-template" id="confirmModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Alert</h3>
+        </div>
+        <div class="modal-body">
+            <p> By pressing confirm, you will be redirected to another window to schedule your appointment. Please remember to close that window to continue using this app. </p>
+        </div>
+        <div class="modal-footer">
+          <a href="{{companyfull.meetmelink}}" target="_blank">
+            <button class="btn btn-primary"> Confirm </button>
+          </a>
+            <button class="btn btn-primary" ng-click="ok()">Cancel</button>
+        </div>
+    </script>
+
 <p id="engageButtonBox">
 
-  <a href="{{companyfull.meetmelink}}" target="_blank" ><i class="fa fa-calendar fa-4x" id="engageButton"></i></a>
+<!--   <a href="{{companyfull.meetmelink}}" target="_blank" ><i class="fa fa-calendar fa-4x" id="engageButton"></i></a>
+ -->
+  <a href=""><i class="fa fa-calendar fa-4x" ng-click="openConfirm()"></i></a>
   <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x" id="engageButton"></i></a>
   <a href=""><i class="fa fa-share-alt-square fa-4x" ng-click="open()" id="engageButton"></i></a>
 
