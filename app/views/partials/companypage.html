@@ -1,10 +1,14 @@
 <div ng-include="'partials/navbar'"></div>
 
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-10 pull-lg-right">
+  <img class="img-responsive" src="{{companyfull.image}}" alt="">
+</div>
+
+
 <div class = "col-lg-9 col-md-9 col-sm-9 col-xs-12">
-  <a href='/'><i class="fa fa-reply fa-lg"></i> Back to Companies</a>
-<h1> {{companyfull.name}} </h1>
+<h1> <a href='/'><i class="fa fa-reply fa-lg"></i></a>  {{companyfull.name}} </h1>
 <p> {{companyfull.info}} </p>
-<h3> Company Info </h3>
+<!-- <h3> Company Info </h3> -->
 <p> <div class = "bold"> Co-founders:</div>
   <div ng-repeat='founder in companyfull.cofounders'>
     <a href="{{founder.linkedinurl}}" target= "_blank">{{founder.name}}</a>
@@ -12,16 +16,22 @@
 </p>
 <p> <div class = "bold"> Founded: </div> {{companyfull.founded}} </p>
 <p> <div class = "bold"> Industry: </div> {{companyfull.industry}} </p>
-<p> <div class = "bold"> Email: </div> <a href="mailto:{{companyfull.email}}">{{companyfull.email}} </a> </p>
-<p> <div class = "bold"> Website: </div> <a href="{{companyfull.website}}">{{companyfull.website}}</a> </p>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xs-offset">
-  <br>
-  <img class="img-responsive" src="{{companyfull.image}}" alt="">
+<p class="bold">Contact</p>
+<p>
+  <a href="{{companyfull.website}}" target="_blank"><i class="fa fa-home fa-3x"></i></a>
+  <a href="{{companyfull.twitter}}" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+  <a href="{{companyfull.facebook}}" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
+  <a href=""><i class="fa fa-calendar fa-3x" ng-click="openConfirm()"></i></a>
+  <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope fa-3x"></i></a>
+  <a href=""><i class="fa fa-share-alt fa-3x" ng-click="open()"></i></a>
+</p>
+   <!-- <a href=""><i class="fa fa-calendar fa-4x" ng-click="openConfirm()"></i></a>
+   <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x" id="engageButton"></i></a>
+   <a href=""><i class="fa fa-share-alt-square fa-4x" ng-click="open()" id="engageButton"></i></a> -->
+<!-- <p> <div class = "bold"> Email: </div> <a href="mailto:{{companyfull.email}}">{{companyfull.email}} </a> </p> -->
 </div>
 
-
-<h3> Engage </h3>
+<!-- <h3> Engage </h3> -->
 
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
@@ -30,9 +40,9 @@
         <div class="modal-body">
             <div addthis-toolbox data-url='{{companyfull.website}}'
                    class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                <a class="addthis_button_twitter"><i class="fa fa-twitter-square"></i></a>
                 <a class="addthis_button_linkedin"><i class="fa fa-linkedin-square"></i></a>
                 <a class="addthis_button_facebook"><i class="fa fa-facebook-square"></i></a>
-                <a class="addthis_button_twitter"><i class="fa fa-twitter-square"></i></a>
                 <a class="addthis_button_google_plusone_share"><i class="fa fa-google-plus-square"></i></a>
             </div>
 
@@ -61,9 +71,9 @@
 
 <!--   <a href="{{companyfull.meetmelink}}" target="_blank" ><i class="fa fa-calendar fa-4x" id="engageButton"></i></a>
  -->
-  <a href=""><i class="fa fa-calendar fa-4x" ng-click="openConfirm()"></i></a>
+  <!-- <a href=""><i class="fa fa-calendar fa-4x" ng-click="openConfirm()"></i></a>
   <a href="mailto:{{companyfull.email}}"><i class="fa fa-envelope-square fa-4x" id="engageButton"></i></a>
-  <a href=""><i class="fa fa-share-alt-square fa-4x" ng-click="open()" id="engageButton"></i></a>
+  <a href=""><i class="fa fa-share-alt-square fa-4x" ng-click="open()" id="engageButton"></i></a> -->
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <!-- <div class="addthis_sharing_toolbox"></div> -->

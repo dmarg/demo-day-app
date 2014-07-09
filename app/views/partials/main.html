@@ -38,7 +38,7 @@
 <div class='col-lg-12' ng-show="currentUser">
   <h2> DreamIt Ventures Demo Day </h2>
     <div class="row marketing navbarTitle">
-        <div ng-repeat="company in companies" id="companyBoxes">
+        <div ng-repeat="company in companies | orderBy: 'order'" class="companyBoxes">
             <a id="link" href="/companypage/{{company.name}}">
               <!-- <span class="link-spanner"></span>
               <img src="{{company.image}}" alt="" id="companyImages">
@@ -46,17 +46,18 @@
               <p>{{company.industry}}</p>
               <div class="clearfix"></div> -->
               <div class='row'>
-                <!-- <div class="col-xs-6 col-xs-offset-3"><h2 id="disappearedInfo">{{company.name}}</h2> </div> -->
-              <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
-                <img class="img-responsive" src="{{company.image}}">
-              </div>
-              <div class="col-lg-10 col-md-10 col-sm-6 col-xs-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
-                <h2 id="disappearingInfo">{{company.name}}</h2>
-                <div ng-repeat='cofounder in company.cofounders'>
-                <h4 style="margin: 5px 0 0px 0;">{{cofounder.name}}</h4>
-                </div>
-                <p style="margin-bottom: 40px;" id="disappearingInfo">{{company.info}}</p>
-              </div>
+                <!-- <div class="col-xs-6 col-xs-offset-3 disappearedInfo"><h2 class="disappearedInfo">{{company.name}}</h2> </div> -->
+                  <div class="col-lg-2 col-md-2 col-sm-6 col-xs-4 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
+                    <img class="img-responsive" src="{{company.image}}">
+                  </div>
+
+                  <div class="col-lg-10 col-md-10 col-sm-6 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
+                    <h2>{{company.name}}</h2>
+                    <p style="margin-bottom: 40px;" class="disappearingInfo">{{company.info}}</p>
+                       <!--  <a href=""><i class="fa fa-calendar fa-4x" ng-click="openConfirm()"></i></a>
+                        <a href="mailto:{{company.email}}"><i class="fa fa-envelope-square fa-4x" id="engageButton"></i></a>
+                        <a href=""><i class="fa fa-share-alt-square fa-4x" ng-click="open()" id="engageButton"></i></a> -->
+                  </div>
               </div>
               </a>
 
@@ -65,7 +66,39 @@
 </div>
 
 
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Share</h3>
+        </div>
+        <div class="modal-body">
+            <div addthis-toolbox data-url='{{company.website}}'
+                   class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                <a class="addthis_button_linkedin"><i class="fa fa-linkedin-square"></i></a>
+                <a class="addthis_button_facebook"><i class="fa fa-facebook-square"></i></a>
+                <a class="addthis_button_twitter"><i class="fa fa-twitter-square"></i></a>
+                <a class="addthis_button_google_plusone_share"><i class="fa fa-google-plus-square"></i></a>
+            </div>
 
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">Close</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="confirmModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Alert</h3>
+        </div>
+        <div class="modal-body">
+            <p> By pressing confirm, you will be redirected to another window to schedule your appointment. Please remember to close that window to continue using this app. </p>
+        </div>
+        <div class="modal-footer">
+          <a href="{{company.meetmelink}}" target="_blank">
+            <button class="btn btn-primary"> Confirm </button>
+          </a>
+            <button class="btn btn-primary" ng-click="ok()">Cancel</button>
+        </div>
+    </script>
 
 
 
@@ -87,5 +120,3 @@
       <p>{{thing.info}}</p>
   </div>
 </div> -->
-
-
